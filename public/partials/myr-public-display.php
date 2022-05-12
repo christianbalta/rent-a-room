@@ -13,4 +13,12 @@
  */
 ?>
 
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
+<div class="wrap">
+  <form>
+    <label class="color-red">Choose Location</label>
+    <input type="radio">Zürich</input>
+    <input type="radio">Basel</input>
+  </form>
+</div>
+
+

@@ -100,4 +100,20 @@ class Myr_Public {
 
 	}
 
+	public function register_shortcodes() {
+		add_shortcode( 'shortcode', array( $this, 'shortcode_function') );
+	  }
+
+	/**
+	 * Render the frontend page for plugin
+	 *
+	 * @since  1.0.0
+	 */
+	public function shortcode_function() {
+		ob_start();
+    	require_once 'partials/myr-public-display.php';
+    	$content = ob_get_clean();
+    	return $content;
+	}
+
 }
