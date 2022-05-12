@@ -73,6 +73,12 @@ class Myr_Public {
 		 * class.
 		 */
 
+		// CSS
+		wp_register_style('prefix_bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
+		wp_enqueue_style('prefix_bootstrap');
+		wp_register_style('prefix_tempusdominus', 'https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/css/tempus-dominus.css');
+		wp_enqueue_style('prefix_tempusdominus');
+		
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/myr-public.css', array(), $this->version, 'all' );
 
 	}
@@ -95,7 +101,13 @@ class Myr_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
+		// JS
+		wp_register_script('prefix_bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js');
+		wp_enqueue_script('prefix_bootstrap');
+		wp_register_script('prefix_popperjs', 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js');
+		wp_enqueue_script('prefix_popperjs');
+		wp_register_script('prefix_tempusdominus', 'https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/js/tempus-dominus.js');
+		wp_enqueue_script('prefix_tempusdominus');
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/myr-public.js', array( 'jquery' ), $this->version, false );
 
 	}
