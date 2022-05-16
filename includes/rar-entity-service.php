@@ -206,8 +206,54 @@ class RarStatusService
 	public const booked = 3;
 	public const canceled = 4;
 
+	// Initialize DB Tables
+	// WP Globals
+
+
 	public function init()
 	{
+		global $table_prefix, $wpdb;
+
+		$charset_collate = $wpdb->get_charset_collate();
+
+		// Rooms Table
+		$status = $table_prefix . 'status';
+
+		// Create Room Table if not exist
+		if($wpdb->get_var( "show tables like '$status'" ) != $status) {
+
+			// Query - Create Table
+			$create_status_table = "CREATE TABLE $status (
+				id  mediumint(9) NOT NULL AUTO_INCREMENT,
+				code  varchar(55) NOT NULL,
+				PRIMARY KEY  (id)
+				) $charset_collate;";
+
+			// Include Upgrade Script
+			require_once( ABSPATH . '/wp-admin/includes/upgrade.php' );
+			// Create Table
+			dbDelta( $create_status_table );
+
+
+			$wpdb->insert($status, array(
+				'code' => 'pending'
+			));
+			$wpdb->insert($status, array(
+				'code' => 'finished'
+			));
+			$wpdb->insert($status, array(
+				'code' => 'booked'
+			));
+			$wpdb->insert($status, array(
+				'code' => 'canceled'
+			));
+		}
+
+
 
 	}
+
+
+
+
 }
