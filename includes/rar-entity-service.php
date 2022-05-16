@@ -4,14 +4,14 @@
  * Database service for CRUD funtions
 */
 
-class RarEntityService {
+class Rar_Entity_Service {
 
 
 	/**
 	 * access Room entity data
 	 *
 	 * @access   public
-	 * @var      RarRoomService
+	 * @var      Rar_Room_Service
 	*/
 	public $roomService;
 	
@@ -19,7 +19,7 @@ class RarEntityService {
 	 * access guest entity data
 	 *
 	 * @access   public
-	 * @var      RarGuestService
+	 * @var      Rar_Guest_Service
 	*/
 	public $guestService;
 	
@@ -28,7 +28,7 @@ class RarEntityService {
 	 * access rent entity data
 	 *
 	 * @access   public
-	 * @var      RarRentService
+	 * @var      Rar_Rent_Service
 	*/
 	public $rentService;
 	
@@ -36,7 +36,7 @@ class RarEntityService {
 	 * access address entity data
 	 *
 	 * @access   public
-	 * @var      RarAddressService
+	 * @var      Rar_Address_Service
 	*/
 	public $addressService;
 
@@ -44,7 +44,7 @@ class RarEntityService {
 	 * access status entity data
 	 *
 	 * @access   public
-	 * @var      RarStatusService
+	 * @var      Rar_Status_Service
 	*/
 	public $statusService;
 
@@ -54,11 +54,11 @@ class RarEntityService {
 			$this->run_entity_setup();
 		}
 
-		$this->roomService = new RarRoomService();
-		$this->guestService = new RarGuestService();
-		$this->rentService = new RarRentService();
-		$this->addressService = new RarAddressService();
-		$this->statusService = new RarStatusService();
+		$this->roomService = new Rar_Room_Service();
+		$this->guestService = new Rar_Guest_Service();
+		$this->rentService = new Rar_Rent_Service();
+		$this->addressService = new Rar_Address_Service();
+		$this->statusService = new Rar_Status_Service();
 	}
 
 	private function entities_exist() : bool {
@@ -78,7 +78,7 @@ class RarEntityService {
 }
 
 
-class RarGuestService 
+class Rar_Guest_Service 
 {
 
 	public function create($name, $email, $mobile)
@@ -108,7 +108,7 @@ class RarGuestService
 
 }
 
-class RarRoomService 
+class RarRoom_Service 
 {
 
 	public function create($address_id, $space, $roomNumber, $price_per_day, $price_per_hour, $description)
@@ -138,7 +138,7 @@ class RarRoomService
 
 }
 
-class RarRentService 
+class RarRent_Service 
 {
 
 	public function create($user_id, $guest_id, $room_id, $rent_from, $rent_to, $message, $status_id)
@@ -169,7 +169,7 @@ class RarRentService
 }
 
 
-class RarAddressService 
+class RarAddress_Service 
 {
 
 	public function create($street, $houseNumber, $zipCode, $city, $country)
@@ -199,7 +199,7 @@ class RarAddressService
 
 }
 
-class RarStatusService 
+class RarStatus_Service 
 {
 	public const pending = 1;
 	public const finished = 2;

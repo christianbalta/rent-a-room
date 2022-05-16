@@ -6,8 +6,8 @@
  * @link       localhost
  * @since      1.0.0
  *
- * @package    Myr
- * @subpackage Myr/admin
+ * @package    rent-a-room
+ * @subpackage rent-a-room/admin
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Myr
- * @subpackage Myr/admin
+ * @package    rent-a-room
+ * @subpackage rent-a-room/admin
  * @author     Amir Awak & Christian Balta <christianbalta@outlook.com>
  */
-class Myr_Admin {
+class Rar_Admin {
 
 	/**
 	 * The ID of this plugin.
@@ -65,15 +65,15 @@ class Myr_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Myr_Loader as all of the hooks are defined
+		 * defined in Rar_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Myr_Loader will then create the relationship
+		 * The Rar_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/myr-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/rar-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -88,26 +88,26 @@ class Myr_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Myr_Loader as all of the hooks are defined
+		 * defined in Rar_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Myr_Loader will then create the relationship
+		 * The Rar_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/myr-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/rar-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 
-	public function myr_dashboard_page() {
+	public function rar_dashboard_page() {
 		add_menu_page(
-			'My meeting room',
-			'MYR Dashboard',
+			'My rooms',
+			'RAR Dashboard',
 			'manage_options',
-			'myr',
+			'rar',
 			array( $this, 'display_dashboard_page' ),
-			plugin_dir_url(__FILE__) . 'images/myr_icon.png',
+			plugin_dir_url(__FILE__) . 'images/rar_icon.png',
 			20
 		);
 	}
@@ -118,6 +118,6 @@ class Myr_Admin {
 	 * @since  1.0.0
 	 */
 	public function display_dashboard_page() {
-		include_once 'partials/myr-admin-display.php';
+		include_once 'partials/rar-admin-display.php';
 	}
 }

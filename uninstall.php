@@ -22,7 +22,7 @@
  * @link       localhost
  * @since      1.0.0
  *
- * @package    Myr
+ * @package    rent-a-room
  */
 
 // If uninstall not called from WordPress, then exit.

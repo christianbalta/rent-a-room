@@ -9,8 +9,8 @@
  * @link       localhost
  * @since      1.0.0
  *
- * @package    Myr
- * @subpackage Myr/includes
+ * @package    rent-a-room
+ * @subpackage rent-a-room/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Myr
- * @subpackage Myr/includes
+ * @package    rent-a-room
+ * @subpackage rent-a-room/includes
  * @author     Amir Awak & Christian Balta <christianbalta@outlook.com>
  */
-class Myr_i18n {
+class Rar_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class Myr_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'myr',
+			'rar',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

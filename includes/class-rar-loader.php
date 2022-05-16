@@ -6,8 +6,8 @@
  * @link       localhost
  * @since      1.0.0
  *
- * @package    Myr
- * @subpackage Myr/includes
+ * @package    rent-a-room
+ * @subpackage rent-a-room/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Myr
- * @subpackage Myr/includes
+ * @package    rent-a-room
+ * @subpackage rent-a-room/includes
  * @author     Amir Awak & Christian Balta <christianbalta@outlook.com>
  */
-class Myr_Loader {
+class Rar_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

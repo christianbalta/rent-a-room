@@ -8,8 +8,8 @@
  * @link       localhost
  * @since      1.0.0
  *
- * @package    Myr
- * @subpackage Myr/admin/partials
+ * @package    rent-a-room
+ * @subpackage rent-a-room/admin/partials
  */
 ?>
 
@@ -20,10 +20,10 @@
     <form action="options.php" method="post">
         <?php
             // output security fields for the registered setting "wporg_options"
-            settings_fields( 'myr_options' );
+            settings_fields( 'rar_options' );
             // output setting sections and their fields
             // (sections are registered for "wporg", each field is registered to a specific section)
-            do_settings_sections( 'myr' );
+            do_settings_sections( 'rar' );
             // output save settings button
             submit_button( __( 'Save Settings', 'textdomain' ) );
         ?>

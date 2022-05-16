@@ -9,8 +9,8 @@
  * @link       localhost
  * @since      1.0.0
  *
- * @package    Myr
- * @subpackage Myr/includes
+ * @package    rent-a-room
+ * @subpackage rent-a-room/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Myr
- * @subpackage Myr/includes
+ * @package    rent-a-room
+ * @subpackage rent-a-room/includes
  * @author     Amir Awak & Christian Balta <christianbalta@outlook.com>
  */
-class Myr {
+class Rar {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Myr {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Myr_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Rar_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -67,12 +67,12 @@ class Myr {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'MYR_VERSION' ) ) {
-			$this->version = MYR_VERSION;
+		if ( defined( 'RAR_VERSION' ) ) {
+			$this->version = RAR_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'myr';
+		$this->plugin_name = 'rar';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -86,10 +86,10 @@ class Myr {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Myr_Loader. Orchestrates the hooks of the plugin.
-	 * - Myr_i18n. Defines internationalization functionality.
-	 * - Myr_Admin. Defines all hooks for the admin area.
-	 * - Myr_Public. Defines all hooks for the public side of the site.
+	 * - Rar_Loader. Orchestrates the hooks of the plugin.
+	 * - Rar_i18n. Defines internationalization functionality.
+	 * - Rar_Admin. Defines all hooks for the admin area.
+	 * - Rar_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -103,33 +103,33 @@ class Myr {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-myr-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-rar-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-myr-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-rar-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-myr-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-rar-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-myr-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-rar-public.php';
 
-		$this->loader = new Myr_Loader();
+		$this->loader = new Rar_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Myr_i18n class in order to set the domain and to register the hook
+	 * Uses the Rar_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -137,7 +137,7 @@ class Myr {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Myr_i18n();
+		$plugin_i18n = new Rar_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,11 +152,11 @@ class Myr {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Myr_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Rar_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-		$this->loader->add_action( 'admin_menu', $plugin_admin, 'myr_dashboard_page' );
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'rar_dashboard_page' );
 
 	}
 
@@ -169,7 +169,7 @@ class Myr {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Myr_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Rar_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -201,7 +201,7 @@ class Myr {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Myr_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Rar_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

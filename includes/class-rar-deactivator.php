@@ -6,8 +6,8 @@
  * @link       localhost
  * @since      1.0.0
  *
- * @package    Myr
- * @subpackage Myr/includes
+ * @package    rent-a-room
+ * @subpackage rent-a-room/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    Myr
- * @subpackage Myr/includes
+ * @package    rent-a-room
+ * @subpackage rent-a-room/includes
  * @author     Amir Awak & Christian Balta <christianbalta@outlook.com>
  */
-class Myr_Deactivator {
+class Rar_Deactivator {
 
 	/**
 	 * Short Description. (use period)

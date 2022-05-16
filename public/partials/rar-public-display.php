@@ -8,8 +8,8 @@
  * @link       localhost
  * @since      1.0.0
  *
- * @package    Myr
- * @subpackage Myr/public/partials
+ * @package    rent-a-room
+ * @subpackage rent-a-room/public/partials
  */
 ?>
 

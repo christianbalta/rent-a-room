@@ -6,8 +6,8 @@
  * @link       localhost
  * @since      1.0.0
  *
- * @package    Myr
- * @subpackage Myr/public
+ * @package    rent-a-room
+ * @subpackage rent-a-room/public
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Myr
- * @subpackage Myr/public
+ * @package    rent-a-room
+ * @subpackage rent-a-room/public
  * @author     Amir Awak & Christian Balta <christianbalta@outlook.com>
  */
-class Myr_Public {
+class Rar_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -65,10 +65,10 @@ class Myr_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Myr_Loader as all of the hooks are defined
+		 * defined in Rar_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Myr_Loader will then create the relationship
+		 * The Rar_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
@@ -79,7 +79,7 @@ class Myr_Public {
 		wp_register_style('prefix_tempusdominus', 'https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/css/tempus-dominus.css');
 		wp_enqueue_style('prefix_tempusdominus');
 		
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/myr-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/rar-public.css', array(), $this->version, 'all' );
 
 	}
 
@@ -94,10 +94,10 @@ class Myr_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Myr_Loader as all of the hooks are defined
+		 * defined in Rar_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Myr_Loader will then create the relationship
+		 * The Rar_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
@@ -108,7 +108,7 @@ class Myr_Public {
 		wp_enqueue_script('prefix_popperjs');
 		wp_register_script('prefix_tempusdominus', 'https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/js/tempus-dominus.js');
 		wp_enqueue_script('prefix_tempusdominus');
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/myr-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/rar-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 
@@ -123,7 +123,7 @@ class Myr_Public {
 	 */
 	public function shortcode_function() {
 		ob_start();
-    	require_once 'partials/myr-public-display.php';
+    	require_once 'partials/rar-public-display.php';
     	$content = ob_get_clean();
     	return $content;
 	}

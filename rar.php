@@ -10,10 +10,10 @@
  *
  * @link              localhost
  * @since             1.0.0
- * @package           Myr
+ * @package           rent-a-room
  *
  * @wordpress-plugin
- * Plugin Name:       meet-your-room
+ * Plugin Name:       rent-a-room
  * Plugin URI:        localhost
  * Description:       Plugin where your customers can rent your office rooms
  * Version:           1.0.0
@@ -21,7 +21,7 @@
  * Author URI:        localhost
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       myr
+ * Text Domain:       rar
  * Domain Path:       /languages
  */
 
@@ -35,34 +35,34 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'MYR_VERSION', '1.0.0' );
+define( 'RAR_VERSION', '1.0.0' );
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-myr-activator.php
+ * This action is documented in includes/class-rar-activator.php
  */
-function activate_myr() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-myr-activator.php';
-	Myr_Activator::activate();
+function activate_rar() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-rar-activator.php';
+	Rar_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-myr-deactivator.php
+ * This action is documented in includes/class-rar-deactivator.php
  */
-function deactivate_myr() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-myr-deactivator.php';
-	Myr_Deactivator::deactivate();
+function deactivate_rar() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-rar-deactivator.php';
+	Rar_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_myr' );
-register_deactivation_hook( __FILE__, 'deactivate_myr' );
+register_activation_hook( __FILE__, 'activate_rar' );
+register_deactivation_hook( __FILE__, 'deactivate_rar' );
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-myr.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-rar.php';
 
 /**
  * Begins execution of the plugin.
@@ -73,10 +73,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-myr.php';
  *
  * @since    1.0.0
  */
-function run_myr() {
+function run_rar() {
 
-	$plugin = new Myr();
+	$plugin = new Rar();
 	$plugin->run();
 
 }
-run_myr();
+run_rar();
