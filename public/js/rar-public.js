@@ -1,15 +1,13 @@
 (function( $ ) {
 	'use strict';
 
-
+	$(document).ready(function() {
+		$("input[name$='locationRadio']").click(function() {
+			var location = $(this).val();
+	
+			$("div.hidden").hide();
+			$("#location" + location).show();
+		});
+	});
 
 })( jQuery );
-console.log("hello script");
-
-	
-const changeColor = () =>
-{
-	var submitBtn = document.getElementById("submit-btn");
-	submitBtn.style.backgroundColor = 'red';
-
-};

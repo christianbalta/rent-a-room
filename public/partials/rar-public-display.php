@@ -18,33 +18,33 @@
 
   <form>
 
-    <div class="mb-3">
+  <div class="mb-3">
       <label>Choose Location</label>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1">
-          Zürich
+        <label>
+          <input class="form-check-input" type="radio" name="locationRadio" id="zuerich" value="zuerich">
+            Zürich
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-        <label class="form-check-label" for="flexRadioDefault2">
-          Basel
+        <label>
+          <input class="form-check-input" type="radio" name="locationRadio" id="basel" value="basel">
+            Basel
         </label>
       </div>
     </div>
 
     <div class="mb-3">
       <label>Choose Room</label>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1">
+      <div id="locationzuerich" class="form-check hidden" style="display: none;">
+        <input class="form-check-input" type="radio" name="roomRadio" id="flexRadioDefault3">
+        <label class="form-check-label" for="flexRadioDefault3">
           Room 1
         </label>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-        <label class="form-check-label" for="flexRadioDefault2">
+      <div id="locationbasel" class="form-check hidden" style="display: none;">
+        <input class="form-check-input" type="radio" name="roomRadio" id="flexRadioDefault4">
+        <label class="form-check-label" for="flexRadioDefault4">
           Room 2
         </label>
       </div>
