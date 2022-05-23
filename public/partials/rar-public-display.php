@@ -88,9 +88,12 @@
       <textarea class="form-control" id="comments" rows="3" placeholder="Comments"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary">Rent</button>
-
+    <button id="submit-btn" type="submit" class="btn btn-primary">Rent</button>
+    
   </form>
+  <button  onclick="changeColor()" class="btn btn-primary">
+      test
+    </button>
 </div>
 
 

@@ -76,8 +76,6 @@ class Rar_Public {
 		// CSS
 		wp_register_style('prefix_bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
 		wp_enqueue_style('prefix_bootstrap');
-		wp_register_style('prefix_tempusdominus', 'https://cdn.jsdelivr.net/gh/Eonasdan/tempus-dominus@master/dist/css/tempus-dominus.css');
-		wp_enqueue_style('prefix_tempusdominus');
 		
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/rar-public.css', array(), $this->version, 'all' );
 
@@ -104,7 +102,6 @@ class Rar_Public {
 		// JS
 		wp_register_script('prefix_bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js');
 		wp_enqueue_script('prefix_bootstrap');
-		
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/rar-public.js', array( 'jquery' ), $this->version, false );
 
 	}
