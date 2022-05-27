@@ -15,17 +15,45 @@
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 
-<div class="wrap">
-    <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
-    <form action="options.php" method="post">
-        <?php
-            // output security fields for the registered setting "wporg_options"
-            settings_fields( 'rar_options' );
-            // output setting sections and their fields
-            // (sections are registered for "wporg", each field is registered to a specific section)
-            do_settings_sections( 'rar' );
-            // output save settings button
-            submit_button( __( 'Save Settings', 'textdomain' ) );
-        ?>
-    </form>
+<div class="container">
+
+    <h1>Rent a Room</h1>
+    <h2>Dashboard</h2>
+
+    <h3>Rooms</h3>
+    <table class="table">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
+        <th scope="col">Address</th>
+        <th scope="col">Detail</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Room 100A</td>
+            <td>Booked</td>
+            <td>Freiestrasse 87, Zürich 8032 Schweiz</td>
+            <td><button class="btn btn-secondary">Details</button></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Room 201B</td>
+            <td>Open</td>
+            <td>Dinistrasse 10A, Zürich 8032 Schweiz</td>
+            <td><button class="btn btn-secondary">Details</button></td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Room 107A</td>
+            <td>Booked</td>
+            <td>Irgendeanderistrasse 10, Zürich 8032 Schweiz</td>
+            <td><button class="btn btn-secondary">Details</button></td>
+        </tr>
+    </tbody>
+    </table>
+
 </div>

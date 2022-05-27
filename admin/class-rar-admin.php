@@ -72,6 +72,8 @@ class Rar_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		wp_register_style('prefix_bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
+		wp_enqueue_style('prefix_bootstrap');
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/rar-admin.css', array(), $this->version, 'all' );
 
@@ -95,23 +97,35 @@ class Rar_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
+		wp_register_script('prefix_bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js');
+		wp_enqueue_script('prefix_bootstrap');
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/rar-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 
 	public function rar_dashboard_page() {
 		add_menu_page(
-			'My rooms',
 			'RAR Dashboard',
+			'Rent a Room',
 			'manage_options',
 			'rar',
 			array( $this, 'display_dashboard_page' ),
 			plugin_dir_url(__FILE__) . 'images/rar_icon.png',
 			20
 		);
+
 	}
 
+	public function rar_create_room_page(){
+		add_submenu_page(
+			'rar',
+			'rar-create-room',
+			'Create Room',
+			'manage_options',
+			'rar-create-room',
+			array( $this, 'display_create_room_page' )
+		);
+	}
 	/**
 	 * Render the dashboard page for plugin
 	 *
@@ -119,5 +133,14 @@ class Rar_Admin {
 	 */
 	public function display_dashboard_page() {
 		include_once 'partials/rar-admin-display.php';
+	}
+
+	/**
+	 * Render the create room submenu
+	 *
+	 * @since  1.0.0
+	 */
+	public function display_create_room_page() {
+		include_once 'partials/rar-admin-create-room.php';
 	}
 }
